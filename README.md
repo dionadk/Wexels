@@ -12,4 +12,4 @@
 ### User can favorite a design - join table favorites(User and Uploads)
 
 ## Gold
-# Option to see most recent and popular designs show up
+### Option to see most recent and popular designs show up

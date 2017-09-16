@@ -1,0 +1,19 @@
+<%= link_to @pic.title , edit_pic_path(@pic)%>
+
+
+<div style="display:flex;">
+<% @taggings.where(:pic_id => @pic).each do |tagging01| %>
+  <%= "Tag id: #{tagging01.tag_id}" %>
+<% @tags.where(:id => tagging01.tag_id).each do |tag02| %>
+ <%= "Tag name: #{tag02.name}" %>
+ <% end %>
+ <% end %>
+</div>
+
+Comments: <%= link_to "(Add)", new_pic_comment_path(@pic) %></h3>
+
+<% @pic.comments.each do |comment| %>
+
+        <%= "#{comment.name}"%>
+        <%= "#{comment.content}"%> <%= link_to "(edit)",edit_pic_comment_path(@pic,comment) %></p>
+  <% end %>

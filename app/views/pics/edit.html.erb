@@ -1,0 +1,21 @@
+<h2>New Upload</h2>
+
+<%= form_for @pic do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+
+  <%= f.label :uploaded_by %>
+  <%= f.text_field :uploaded_by %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= form_for @pic, method: :delete do |f| %>
+  <%= f.submit "Delete!" %>
+<% end %>

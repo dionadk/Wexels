@@ -1,7 +1,7 @@
 # Wexels - a web designer app
 ## Ruby on Rails, javascript, jquery, css and html5
 ## MVP
-### There are 2 models - Uploads,Tags and a join table Taggings
+### There are 2 models - Pics,Tags and a join table Taggings
 
 ## Silver
 ### Added feature -

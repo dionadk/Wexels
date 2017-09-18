@@ -10,6 +10,7 @@
       <div class="flexColumn">
         <label class="headerTitle"><%= link_to @pic.title , edit_pic_path(@pic)%></label>
         <label class="headerSubTitle"><%= "Designed By: #{@pic.uploaded_by } uploaded on '#{@pic.created_at}'"%></label>
+
      </div>
     </div>
 
@@ -23,9 +24,20 @@
       <img src="https://i.imgur.com/pidjMbG.png"/>
       <div class="tagTitle">
 
-      Tags: <%= link_to "(+)", new_tag_path(@tag) %>
+
+
 
       <%= link_to "tagging".html_safe, add_tagging_pic_path(@pic), method: :post, class: "add_tag" %>
+
+
+       <%= form_for @tag do |f| %>
+         <%= f.label :name %>
+         <%= f.text_field :name %>
+         <%= f.submit %>
+
+      <% end %>
+
+
 
 
         <% @taggings.where(:pic_id => @pic).each do |tagging01| %>

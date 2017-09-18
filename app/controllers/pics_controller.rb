@@ -45,16 +45,8 @@ class PicsController < ApplicationController
     @comment = @pic.comments
     @tags = Tag.all
     @taggings = Tagging.joins(:tag, :pic)
+    @tag = Tag.new
   end
-
-  def add_tagging
-    @pic = Pic.find(params[:id])
-    @tag = Tag.find(params[:id])
-    @tagging = Tagging.create(pic_id: @pic,tag_id: @tag)
-    redirect_to pics_path
-end
-
-
 
   private
 def pic_params

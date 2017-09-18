@@ -4,22 +4,14 @@ Rails.application.routes.draw do
 root to: 'pics#index'
 
   resources :pics do
-  resources :comments
-  end
-  resources :pics do
-  resources :taggings
-end
-
-
-  resources :pics do
+    resources :comments
     member do
       post 'add_tagging'
     end
-
   end
 
-  resources :tags
 
+  resources :tags
 
 
 end

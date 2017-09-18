@@ -15,9 +15,12 @@ class TagsController < ApplicationController
   end
 
 
-  def create
-    @tag = Tag.create!(tag_params)
 
+
+    def create
+      @tag = Tag.create!(tag_params)
+      @tagging = Tagging.create(pic_id: @pic,tag_id: @tag)
+      redirect_to pics_path
 
   end
 

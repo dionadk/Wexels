@@ -48,6 +48,20 @@ class PicsController < ApplicationController
     @tag = Tag.new
   end
 
+
+  def add_tagging
+    @pic = Pic.find(params[:id])
+    @tagging = Tagging.create(pic_id: @pic,tag_id: @tag)
+    redirect_to pics_path
+    
+  end
+
+
+
+
+
+
+
   private
 def pic_params
   params.require(:pic).permit(:title, :body, :img_url, :uploaded_by)

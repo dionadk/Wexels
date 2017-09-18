@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
   def create
     @pic = Pic.find(params[:pic_id])
-    @comment = @pic.comments.create!(comment_params)
+    @comment = @pic.comments.create!(comment_params.merge(user: current_user))
     redirect_to pic_path(@pic)
 
   end

@@ -1,0 +1,9 @@
+<%= form_for @tagging do |f| %>
+
+<%= f.select :pic_id, Pic.all.collect { |pic| [pic.name, pic.id] }  %>
+<%= f.select :tag_id, Tag.all.collect { |tag| [tag.name, tag.id] }  %>
+
+
+
+<%= f.submit %>
+<% end %>

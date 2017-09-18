@@ -1,0 +1,10 @@
+
+<h3><%= link_to "New tag", new_tagging_pic_path %></h3>
+<% @taggings.each do |tagg| %>
+<div class="tagging">
+
+
+  <%= "#{tagg.pic_id} ,#{tagg.tag_id}" %>
+
+</div>
+<% end %>

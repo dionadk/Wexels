@@ -24,20 +24,18 @@
       <img src="https://i.imgur.com/pidjMbG.png"/>
       <div class="tagTitle">
 
+        <h3><%= link_to "New tag", add_tagging_pic_path %></h3>
+        <% @taggings.each do |tagg| %>
+        <div class="tagging">
 
+
+          <%= "#{tagg.pic_id} ,#{tagg.tag_id}" %>
+
+        </div>
+        <% end %>
 
 
       <%= link_to "tagging".html_safe, add_tagging_pic_path(@pic), method: :post, class: "add_tag" %>
-
-
-       <%= form_for @tag do |f| %>
-         <%= f.label :name %>
-         <%= f.text_field :name %>
-         <%= f.submit %>
-
-      <% end %>
-
-
 
 
         <% @taggings.where(:pic_id => @pic).each do |tagging01| %>

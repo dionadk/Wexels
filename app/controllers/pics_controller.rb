@@ -10,13 +10,18 @@ class PicsController < ApplicationController
 
 
   def create
-    @pic = Pic.create!(pic_params)
+    @pic = current_user.pics.create!(pic_params.merge(user:current_user))
     redirect_to pic_path(@pic)
 
   end
 
   def edit
     @pic = Pic.find(params[:id])
+    unless @pic.user == current_user
+    flash[:alert] = "Only signed-in users can edit"
+    redirect_to pics_path
+  else
+  end
   end
 
   def update
@@ -27,7 +32,11 @@ class PicsController < ApplicationController
 
   def destroy
     @pic = Pic.find(params[:id])
-    @pic.destroy
+    if @pic.user == current_user
+      @pic.destroy
+    else
+      flash[:alert] = "Denied!!!"
+    end
     redirect_to pics_path
   end
 
@@ -37,6 +46,15 @@ class PicsController < ApplicationController
     @tags = Tag.all
     @taggings = Tagging.joins(:tag, :pic)
   end
+
+  def add_tagging
+    @pic = Pic.find(params[:id])
+    @tag = Tag.find(params[:id])
+    @tagging = Tagging.create(pic_id: @pic,tag_id: @tag)
+    redirect_to pics_path
+end
+
+
 
   private
 def pic_params

@@ -29,6 +29,13 @@ class CommentsController < ApplicationController
 
   end
 
+    def destroy
+      @pic = Pic.find(params[:pic_id])
+      @comment = Comment.find(params[:id])
+      @comment.destroy
+      redirect_to pic_path(@pic)
+    end
+
 
 
   private

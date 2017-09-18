@@ -1,8 +1,10 @@
-<h1>All uploads
-<%= link_to  "(+)" ,new_pic_path %></h1>
-
+<h1 class="headerLbl">Get inspired</h1>
+<div class="flexcollection">
 <% @pics.each do |pic|%>
+<div class="flexImg">
+<img class="pic" src="<%= pic.img_url %>"/>
 <%= link_to pic.title,pic_path(pic)%>
-<img src="<%= pic.img_url %>"/>
+</div>
 
 <%end%>
+</div>

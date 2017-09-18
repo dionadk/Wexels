@@ -5,6 +5,7 @@ class TagsController < ApplicationController
   end
 
   def new
+
     @tag = Tag.new
   end
 
@@ -16,7 +17,7 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.create!(tag_params)
-    redirect_to tag_path(@tag)
+
 
   end
 
@@ -29,6 +30,11 @@ class TagsController < ApplicationController
     @tag.update(tag_params)
     redirect_to tag_path(@tag)
   end
+
+
+
+
+
 
   private
 def tag_params

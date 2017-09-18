@@ -7,10 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+User.destroy_all
 Pic.destroy_all
 Tag.destroy_all
 Tagging.destroy_all
+
+kurien = User.create(email: 'kurien@gmail.com', password: 'password')
 
 tag1 = Tag.create!(name: "design")
 tag2 = Tag.create!(name: "blog")

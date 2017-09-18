@@ -13,3 +13,178 @@
  *= require_tree .
  *= require_self
  */
+  @import url(https://fonts.googleapis.com/css?family=Black+Ops+One|Meddon);
+ @import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+nav{
+  height:60px;
+  background-color: #3D315B;
+  margin: 0;
+  box-shadow: 2px 2px 5px gray;
+}
+.imgPreview{
+  width: 500px;
+  height: 450px;
+}
+.logoLnk{
+  font-family: 'Meddon', cursive;
+  text-decoration: none;
+  color: #fff;
+  font-size: 28px;
+  margin: 0 10px;
+}
+.uploadlnk{
+  text-align: right;
+  margin: -40px 10px;
+}
+.signUser {
+  text-align: right;
+  color: white;
+  font-family: 'Meddon', cursive;
+  text-decoration: none;
+  padding: 10px 70px;
+
+}
+ .flexImg{
+    display: inline-grid;
+    text-align: center;
+    margin: 10px;
+ }
+ .flexImg a{
+    padding-top: 15px;
+    color: #708B75;
+    text-decoration: none;
+    background-color: #fff;
+    margin: -40px 0 0;
+    height: 25px;
+ }
+.flexcollection{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+ .pic {
+   width: 300px;
+   height: 250px;
+   box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.2);
+ }
+ .imgBox{
+   width: 500px;
+   height: 450px;
+   box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.2);
+   margin: 10px;
+ }
+ .headerLbl{
+   color:#3D315B;
+   text-align: center;
+  font-family: 'Meddon', cursive;
+ }
+
+ .title {
+   display: inline-flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   color: #708B75;
+ }
+
+ span.headerTitle {
+   text-align: left;
+   padding-left: 350px;
+   color: #708B75;
+ }
+
+ .comment {
+   display: inline-flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+ }
+
+ span.commentSpan {
+   text-align: right;
+   padding-left: 250px;
+ }
+
+ .tagDisplay {
+
+   display: flex;
+    margin-top: 200px;
+    padding: 10px 20px;
+ }
+
+a {
+  text-decoration: none;
+}
+ body {
+margin:0 10px;
+ }
+
+.flexContainer {
+  display: flex;
+}
+
+.flexSubContainer {
+  flex-grow: 2;
+  margin: 30px 0;
+
+}
+
+.flexRow{
+  display: flex;
+}
+.flexColumn{
+  display: grid;
+}
+.designerProfile{
+  width: 40px;
+  height: 40px;
+}
+
+.headerTitle {
+  color:#3D315B;
+  font-size: 22px;
+  margin: 0 10px;
+}
+
+.headerSubTitle {
+  color: gray;
+  font-size: 10px;
+  margin: 0 10px;
+}
+
+.bodySubTitle {
+  color: gray;
+  font-size: 16px;
+  margin: 0 35px;
+}
+
+.tagTitle {
+  color: orange;
+  font-size: 14px;
+  margin: 0 10px;
+
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+
+}
+.commentBlock{
+    background-color: rgba(211, 211, 211, 0.12);
+    border-bottom: 1px solid rgba(61, 49, 91, 0.42);
+    min-height: 60px;
+    padding: 5px;
+}
+.commentColumn{
+  margin-top: 60px;
+}
+.homeBtn{
+  margin-top: 30px;
+  font-size: 13px;
+  color: #db5850;
+}
+.homeBtn span{
+  color:#3D315B;
+}
+.backButton{
+  margin-top: 25px;
+}

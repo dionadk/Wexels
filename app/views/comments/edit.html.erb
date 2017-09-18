@@ -9,3 +9,7 @@
 
   <%= f.submit %>
 <% end %>
+
+<%= form_for [@pic,@comment], method: :delete do |f| %>
+  <%= f.submit "Delete!" %>
+<% end %>

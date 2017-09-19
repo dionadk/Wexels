@@ -26,6 +26,10 @@
    </div>
      </nav>
    </div>
+   <!-- <%= form_tag(pics_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Tags" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %> -->
 
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>

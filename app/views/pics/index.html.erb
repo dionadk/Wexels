@@ -1,12 +1,12 @@
 
 <h1 class="headerLbl">Get inspired</h1>
-<!-- <div class="flexRow">
-  <input id="searchText" type="text"></input>
-</div> -->
+<div class="flexRow">
+
 <%= form_tag(pics_path,method: :get) do %>
   <%= text_field_tag :name,params[:name]%>
   <%= submit_tag 'Search',name: nil %>
 <% end %>
+</div>
 
 
 
@@ -21,8 +21,8 @@
   <%end%>
 </div>
 
-<!-- 
-<div class="flexcollection">
+
+<!-- <div class="flexcollection">
   <% @pics.each do |pic|%>
       <div class="flexImg">
         <img class="pic" src="<%= pic.img_url %>"/>
@@ -30,3 +30,7 @@
       </div>
   <%end%>
 </div> -->
+
+<!-- <% if @pics.blank? %>
+  <h4>There are no designs containing the term <%= params[:search] %>.</h4>
+<% end %> -->

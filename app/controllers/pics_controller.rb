@@ -2,7 +2,12 @@ class PicsController < ApplicationController
 
   def index
     @pics = Pic.all
+    @tags = Tag.all
   end
+
+#   def index
+#   @pics = Pic.search(params[:name])
+# end
 
   def new
     @pic = Pic.new
@@ -47,23 +52,8 @@ class PicsController < ApplicationController
   def show
     @pic = Pic.find(params[:id])
     @comment = @pic.comments
-    @tags = Tag.all
-    @taggings = Tagging.joins(:tag, :pic)
-    @tag = Tag.new
+    @tag =  @pic.tags
   end
-
-  def add_tagging
-    @pic = Pic.find(params[:id])
-    @tagging = Tagging.create(pic: @pic,tag: @tag)
-    redirect_to pics_path
-
-  end
-
-
-
-
-
-
 
   private
 def pic_params

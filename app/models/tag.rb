@@ -1,4 +1,4 @@
 class Tag < ApplicationRecord
-  has_many :taggings
-  has_many :pics, through: :taggings
+  belongs_to :pic
+  belongs_to :user
 end

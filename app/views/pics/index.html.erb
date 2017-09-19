@@ -1,12 +1,31 @@
+
 <h1 class="headerLbl">Get inspired</h1>
+<!-- <div class="flexRow">
+  <input id="searchText" type="text"></input>
+</div> -->
+<%= form_tag(pics_path,method: :get) do %>
+  <%= text_field_tag :name,params[:name]%>
+  <%= submit_tag 'Search',name: nil %>
+<% end %>
+
+
+
+<!-- <div class="flexcollection">
+  <% @tags.where(:name => "yummy").each do |tag|%>
+  <% @pics.where(:id => tag.pic_id).each do |pic|%>
+      <div class="flexImg">
+        <img class="pic" src="<%= pic.img_url %>"/>
+        <%= link_to pic.title,pic_path(pic)%>
+      </div>
+  <%end%>
+<%end%> -->
+
+
 <div class="flexcollection">
-<% @pics.each do |pic|%>
-<div class="flexImg">
-<img class="pic" src="<%= pic.img_url %>"/>
-<%= link_to pic.title,pic_path(pic)%>
-
-
-</div>
-
-<%end%>
+  <% @pics.each do |pic|%>
+      <div class="flexImg">
+        <img class="pic" src="<%= pic.img_url %>"/>
+        <%= link_to pic.title,pic_path(pic)%>
+      </div>
+  <%end%>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918124824) do
+ActiveRecord::Schema.define(version: 20170919010719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,19 +37,14 @@ ActiveRecord::Schema.define(version: 20170918124824) do
     t.index ["user_id"], name: "index_pics_on_user_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
-    t.bigint "tag_id", null: false
-    t.bigint "pic_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pic_id"], name: "index_taggings_on_pic_id"
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-  end
-
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pic_id"
+    t.bigint "user_id"
+    t.index ["pic_id"], name: "index_tags_on_pic_id"
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +66,6 @@ ActiveRecord::Schema.define(version: 20170918124824) do
 
   add_foreign_key "comments", "users"
   add_foreign_key "pics", "users"
-  add_foreign_key "taggings", "pics"
-  add_foreign_key "taggings", "tags"
+  add_foreign_key "tags", "pics"
+  add_foreign_key "tags", "users"
 end

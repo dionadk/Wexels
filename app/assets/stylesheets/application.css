@@ -39,7 +39,7 @@ nav{
 .signUser {
   text-align: right;
   color: white;
-  font-family: 'Meddon', cursive;
+
   text-decoration: none;
   padding: 10px 70px;
 
@@ -154,7 +154,7 @@ a {
 .bodySubTitle {
   color: gray;
   font-size: 16px;
-  margin: 0 35px;
+  margin: 10px;
 }
 
 .tagTitle {
@@ -176,7 +176,9 @@ a {
     padding: 5px;
 }
 .commentColumn{
-  margin-top: 60px;
+    margin-top: 50px;
+    min-height: 450px;
+    background-color: #f6f7f9;
 }
 .homeBtn{
   margin-top: 30px;
@@ -199,4 +201,26 @@ a {
 }
 .defaultView{
   margin: 0 10px;
+}
+.fabLnk{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 30px;
+    padding-left: 15px;
+    padding-top: 20px;
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.58);
+}
+
+.fabLnk:hover{
+    background-color: orange;
+}
+.tagHeader{
+  margin-top: 4px;
+}
+.tagTitle{
+    color: #db5850;
+    font-size: 14px;
+    margin: 0 5px;
 }

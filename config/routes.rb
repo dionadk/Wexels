@@ -5,12 +5,10 @@ root to: 'pics#index'
 
   resources :pics do
     resources :comments
-    member do
-      post 'add_tagging'
-    end
+    resources :tags
   end
 
-  resources :tags
+
 
 
 end

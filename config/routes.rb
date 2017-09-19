@@ -6,6 +6,7 @@ root to: 'pics#index'
   resources :pics do
     resources :comments
     resources :tags
+  
   end
 
 

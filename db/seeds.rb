@@ -14,7 +14,7 @@ Tag.destroy_all
 
 kurien = User.create(email: 'kurien@gmail.com', password: 'password')
 kurien.pics.create!(title: "Tasty",body: "latest design",img_url:"https://i.imgur.com/nAFBLce.png",uploaded_by:"kurien")
-# 
+#
 # tag1 = Tag.create!(name: "design")
 # tag2 = Tag.create!(name: "blog")
 upload1 =kurien.pics.create!(title: "New Adventures",body: "latest design",img_url:"https://imgur.com/e7jGl3X.jpg",uploaded_by:"Albert")

@@ -2,7 +2,7 @@ class PicsController < ApplicationController
 
   def index
     @pics = Pic.all
-    @tags = Tag.all
+    @tags = params[:name] ? Tag.where(:name => params[:name]) : Tag.all
   end
 
 #   def index
@@ -11,11 +11,13 @@ class PicsController < ApplicationController
 
   def new
     @pic = Pic.new
+
   end
 
 
   def create
     @pic = current_user.pics.create!(pic_params.merge(user:current_user))
+
     redirect_to pic_path(@pic)
 
   end

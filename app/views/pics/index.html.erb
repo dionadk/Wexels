@@ -2,7 +2,7 @@
 <h1 class="headerLbl">Get inspired</h1>
 <div class="flexRow">
 
-<%= form_tag(pics_path,method: :get) do %>
+<!-- <%= form_tag(pics_path,method: :get) do %>
   <%= text_field_tag :name,params[:name]%>
   <%= submit_tag 'Search',name: nil %>
 <% end %>
@@ -19,17 +19,28 @@
         </div>
     <%end%>
   <%end%>
-</div>
+</div> -->
 
 
-<!-- <div class="flexcollection">
+<div class="flexcollection">
   <% @pics.each do |pic|%>
       <div class="flexImg">
         <img class="pic" src="<%= pic.img_url %>"/>
         <%= link_to pic.title,pic_path(pic)%>
       </div>
-  <%end%>
-</div> -->
+</div>
+<% end %>
+
+<% @pic.likes.each do |pic| %>
+<% if current_user %>
+        <% if pic.likes.include? current_user %>
+          <%= link_to "&hearts;".html_safe, remove_like_pic_path(pic), method: :delete, class: "fav" %>
+        <% else %>
+          <%= link_to "&hearts;".html_safe, add_like_pic_path(pic), method: :post, class: "no-fav" %>
+        <% end %>
+      <% end %>
+      <% end %>
+
 
 <!-- <% if @pics.blank? %>
   <h4>There are no designs containing the term <%= params[:search] %>.</h4>

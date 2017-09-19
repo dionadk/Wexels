@@ -6,10 +6,11 @@ root to: 'pics#index'
   resources :pics do
     resources :comments
     resources :tags
-  
+    member do
+      post 'add_like'
+      delete 'remove_like'
+    end
+
   end
-
-
-
 
 end

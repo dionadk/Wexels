@@ -114,7 +114,8 @@ a {
   text-decoration: none;
 }
  body {
-margin:0 10px;
+   margin:0;
+   font-family: sans-serif;
  }
 
 .flexContainer {
@@ -187,4 +188,15 @@ margin:0 10px;
 }
 .backButton{
   margin-top: 25px;
+}
+.signUser a{
+  font-family: sans-serif;
+  color: #fff;
+  margin-left: 20px;
+}
+.tagLbl{
+  margin-left: 10px;
+}
+.defaultView{
+  margin: 0 10px;
 }

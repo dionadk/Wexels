@@ -11,7 +11,8 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @taggings = Tagging.joins(:tag, :pic)
+    # @taggings = Tagging.joins(:tag, :pic)
+    @tag.taggings
   end
 
 

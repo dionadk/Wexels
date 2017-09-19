@@ -17,17 +17,21 @@ class PicsController < ApplicationController
 
   def edit
     @pic = Pic.find(params[:id])
-    unless @pic.user == current_user
-    flash[:alert] = "Only signed-in users can edit"
-    redirect_to pics_path
-  else
+    if @pic.user != current_user
+    flash[:alert] = "Only signed in users can edit"
+    redirect_to pic_path(@pic)
   end
   end
 
   def update
     @pic = Pic.find(params[:id])
+    if @pic.user === current_user
     @pic.update(pic_params)
-    redirect_to pic_path(@pic)
+    else
+      flash[:alert] = "Only signed in users can edit"
+    end
+      redirect_to pic_path(@pic)
+
   end
 
   def destroy
@@ -48,12 +52,11 @@ class PicsController < ApplicationController
     @tag = Tag.new
   end
 
-
   def add_tagging
     @pic = Pic.find(params[:id])
-    @tagging = Tagging.create(pic_id: @pic,tag_id: @tag)
+    @tagging = Tagging.create(pic: @pic,tag: @tag)
     redirect_to pics_path
-    
+
   end
 
 

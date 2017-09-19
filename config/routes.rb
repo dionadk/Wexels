@@ -10,7 +10,6 @@ root to: 'pics#index'
     end
   end
 
-
   resources :tags
 
 

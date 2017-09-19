@@ -4,11 +4,14 @@ class TaggingsController < ApplicationController
   end
 
   def new
-    @tagging = Tagging.new
+    @pic = Pic.find(params[:pic_id])
+    @tagging = @pic.taggings.new
   end
 
-  def add_tagging
-    Tagging.create(tagging_params)
+  def create
+    @pic = Pic.find(params[:pic_id])
+    @tag = Tag.find(params[:tag_id])
+    @pic.create(tagging_params)
     redirect_to pics_path
   end
 

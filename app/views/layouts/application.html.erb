@@ -10,6 +10,7 @@
 
   <body>
     <div>
+
     <nav>
       <a class="logoLnk" href="/pics">Wexel</a>
       <div class="uploadlnk" title="Upload my idea">
@@ -26,13 +27,24 @@
    </div>
      </nav>
    </div>
-   <!-- <%= form_tag(pics_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Tags" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %> -->
 
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
     <%= yield %>
+
+ <div class="footerContainer">
+   <div class="footerColumn">
+     About Me
+   </div>
+   <div class="footerColumn">
+     <p>Show and tell for designers
+
+What are you working on? Wexel is a community of designers sharing screenshots of their work, process, and projects.</p>
+   </div>
+   <div class="footerRow">
+     © 2017 Wexel by dk designs. All rights reserved
+     <a class="footerLink" href="#!">More Links</a>
+   </div>
+ </div>
   </body>
 </html>

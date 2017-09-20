@@ -16,6 +16,8 @@ Like.destroy_all
 # user seed
 kurien = User.create!(email: 'kurien@gmail.com', password: 'password')
 ethan = User.create!(email: 'ethan@gmail.com', password: 'password')
+diona = User.create!(email: 'diona@gmail.com', password: 'password')
+ryan = User.create!(email: 'ryan@gmail.com', password: 'password')
 
 
 # design seed
@@ -69,3 +71,21 @@ comment13=Comment.create!(name: "Aaliyah",content: "Looks very organic and the l
 comment14=Comment.create!(name: "Spenser",content: "Really nice soft aesthetic going on here, nice work!",user: ethan,pic_id: upload6.id)
 comment15=Comment.create!(name: "Jack",content: "Fresh to death.",user: kurien,pic_id: upload3.id)
 comment16=Comment.create!(name: "Mcpherson",content: "The spacings are super bold here and there, but overall super clean and super nice work Gene. It is almost as nice as you. Almost.",user: kurien,pic_id: upload4.id)
+
+#like seed
+like1 = Like.create!(pic_id:upload1.id,user:kurien)
+like2 = Like.create!(pic_id:upload2.id,user:ethan)
+like3 = Like.create!(pic_id:upload5.id,user:kurien,num_likes:0)
+like4 = Like.create!(pic_id:upload6.id,user:ethan,num_likes:0)
+like5 = Like.create!(pic_id:upload3.id,user:kurien,num_likes:0)
+like6 = Like.create!(pic_id:upload7.id,user:diona,num_likes:0)
+like7 = Like.create!(pic_id:upload4.id,user:kurien,num_likes:0)
+like8 = Like.create!(pic_id:upload8.id,user:ryan,num_likes:0)
+like9 = Like.create!(pic_id:upload1.id,user:kurien,num_likes:0)
+like10 = Like.create!(pic_id:upload2.id,user:ethan,num_likes:0)
+like11 = Like.create!(pic_id:upload3.id,user:kurien,num_likes:0)
+like12 = Like.create!(pic_id:upload4.id,user:ethan,num_likes:0)
+like13 = Like.create!(pic_id:upload5.id,user:diona,num_likes:0)
+like14 = Like.create!(pic_id:upload6.id,user:ryan,num_likes:0)
+like15 = Like.create!(pic_id:upload7.id,user:diona,num_likes:0)
+like16 = Like.create!(pic_id:upload8.id,user:ryan,num_likes:0)

@@ -6,19 +6,7 @@ class PicsController < ApplicationController
     @likes = Like.all
   end
 
-#   def index
-#   @pics = Pic.search(params[:name])
-# end
 
-
-# def index
-#   @pics = Pic.all
-#   if params[:search]
-#     @pics = Pic.search(params[:search]).order("created_at DESC")
-#   else
-#     @pics = Pic.all.order("created_at DESC")
-#   end
-# end
 def add_like
   @users = User.all
   @pic = Pic.find(params[:id])

@@ -1,65 +1,76 @@
-
-  <div class="flexRow">
-    <img class="backButton" src="https://i.imgur.com/tN6Xszy.png"/>
+<div class="flexRow">
+    <img class="backButton" src="https://i.imgur.com/tN6Xszy.png" />
     <a class="homeBtn" href="/pics">HOME / <span><%= "#{@pic.title }"%></span></a>
-  </div>
+</div>
 <div class="flexContainer defaultView">
-  <div class="flexSubContainer">
-    <div class="flexRow">
-      <img class="designerProfile" src="https://i.imgur.com/rW9kVGe.png"/>
-      <div class="flexColumn">
-        <label class="headerTitle"><%= link_to @pic.title , edit_pic_path(@pic)%></label>
-        <label class="headerSubTitle"><%= "Designed By: #{@pic.uploaded_by } uploaded on '#{@pic.created_at}'"%></label>
-
-     </div>
-    </div>
-
-    <div class="flexRow imgBox">
-      <img class="imgPreview" src="<%= @pic.img_url %>"/>
-    </div>
-    <div class="flexRow">
-      <label class="bodySubTitle"><%= "#{@pic.body }"%></label>
-    </div>
-    <div class="flexRow">
-      <img src="https://i.imgur.com/pidjMbG.png"/>
-      <%= link_to "Tags", new_pic_tag_path(@pic), class: "tagHeader" %>
-
-    </div>
-  <div class="tagTitle">
-        <% @pic.tags.each do |tag| %>
-
-            <label class="tagTitle">
-                <%= "#{tag.name}"%>
-            </label>
-
-            <% end %>
-     </div>
-
-  </div>
-  <!-- comment -->
-  <div class="flexSubContainer">
-    <div class="commentColumn flexColumn">
-      <div>
-        <% @pic.comments.each do |comment| %>
-
-          <div class="flexRow commentBlock">
-            <img class="icon" src="https://i.imgur.com/0J8RJXS.png" />
-
+    <div class="flexSubContainer">
+        <div class="flexRow">
+            <img class="designerProfile" src="https://i.imgur.com/rW9kVGe.png" />
             <div class="flexColumn">
+                <label class="headerTitle">
+                    <%= link_to @pic.title , edit_pic_path(@pic)%>
+                </label>
                 <label class="headerSubTitle">
-                    <%= "#{comment.name}"%>
+                    <%= "Designed By: #{@pic.uploaded_by } uploaded on '#{@pic.created_at}'"%>
                 </label>
-                <label class="bodySubTitle">
-                    <%= "#{comment.content}"%>
-                        <%= link_to ("edit"),edit_pic_comment_path(@pic,comment) %>
-                </label>
+
             </div>
         </div>
-            <% end %>
-            <%= link_to "Add", new_pic_comment_path(@pic) %>
+
+        <div class="flexRow imgBox">
+            <img class="imgPreview" src="<%= @pic.img_url %>" />
+        </div>
+        <div class="flexRow">
+
+        <div class="flexRow">
+            <label class="bodySubTitle">
+                <%= "#{@pic.body }"%>
+            </label>
         </div>
 
+        <div class="flexRow">
+            <% if @like == nil%>
+              <%= link_to image_tag("thumb-up-outline.png"), add_like_pic_path(@pic), method: :post, class: "no-fav" %>
+            <% else %>
+              <%= link_to  image_tag("thumb-up.png"), remove_like_pic_path(@pic), method: :delete, class: "fav" %>
+            <% end %>
+        </div>
+        </div>
+        <div class="flexRow">
+            <img src="https://i.imgur.com/pidjMbG.png" />
+            <%= link_to "Tags", new_pic_tag_path(@pic), class: "tagHeader" %>
+        </div>
+
+        <div class="tagTitle">
+            <% @pic.tags.each do |tag| %>
+                <%=link_to "#{tag.name}" , edit_pic_tag_path(@pic,tag), class: "tagTitle" %>
+            <% end %>
+        </div>
 
     </div>
-  </div>
+    <!-- comment -->
+    <div class="flexSubContainer">
+        <div class="commentColumn flexColumn">
+            <div>
+                <% @pic.comments.each do |comment| %>
+
+                    <div class="flexRow commentBlock">
+                        <img class="icon" src="https://i.imgur.com/0J8RJXS.png" />
+
+                        <div class="flexColumn">
+                            <label class="headerSubTitle">
+                                <%= "#{comment.name}"%>
+                            </label>
+                            <label class="bodySubTitle">
+                                <%= "#{comment.content}"%>
+                                    <%= link_to image_tag("pencil.png"),edit_pic_comment_path(@pic,comment) %>
+                            </label>
+                        </div>
+                    </div>
+                    <% end %>
+            </div>
+
+        </div>
+    </div>
 </div>
+<%= link_to image_tag("tooltip-edit.png"), new_pic_comment_path(@pic),  class: "fabLnk"  %>

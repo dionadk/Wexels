@@ -1,0 +1,11 @@
+<h2>Edit Tag</h2>
+
+<%= form_for [@pic,@tag] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<%= form_for [@pic,@tag], method: :delete do |f| %>
+  <%= f.submit "Delete!" %>
+<% end %>

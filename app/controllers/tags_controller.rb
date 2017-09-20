@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 
   def index
     @tag = Tag.all
-    
+
   end
 
   def new
@@ -16,6 +16,26 @@ class TagsController < ApplicationController
     redirect_to pic_path(@pic)
 
   end
+
+  def edit
+    @pic = Pic.find(params[:pic_id])
+    @tag = @pic.tags.find(params[:id])
+  end
+
+  def update
+    @pic = Pic.find(params[:pic_id])
+    @tag = Tag.find(params[:id])
+    @tag.update(tag_params)
+    redirect_to pic_path(@pic)
+
+  end
+
+    def destroy
+      @pic = Pic.find(params[:pic_id])
+      @tag = Tag.find(params[:id])
+      @tag.destroy
+      redirect_to pic_path(@pic)
+    end
 
 
   private

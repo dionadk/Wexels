@@ -2,7 +2,8 @@ class PicsController < ApplicationController
 
   def index
     @pics = Pic.all
-    @tags = params[:name] ? Tag.where(:name => params[:name]) : Tag.all
+    @tags = params[:name] == nil || params[:name] == "" ? nil : Tag.where(:name => params[:name])
+    @likes = Like.all
   end
 
 #   def index
@@ -18,6 +19,18 @@ class PicsController < ApplicationController
 #     @pics = Pic.all.order("created_at DESC")
 #   end
 # end
+def add_like
+  @users = User.all
+  @pic = Pic.find(params[:id])
+  @like = Like.create(user: current_user,pic: @pic)
+  redirect_to pic_path(@pic)
+end
+
+def remove_like
+  @pic = Pic.find(params[:id])
+  Like.find_by(user: current_user,pic: @pic).destroy
+  redirect_to pic_path(@pic)
+end
 
   def new
     @pic = Pic.new
@@ -65,6 +78,7 @@ class PicsController < ApplicationController
     @pic = Pic.find(params[:id])
     @comment = @pic.comments
     @tag =  @pic.tags
+    @like = Like.find_by(user: current_user,pic: @pic)
   end
 
   private

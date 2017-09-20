@@ -60,7 +60,7 @@ nav{
 .flexcollection{
     display: inline-flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
 }
  .pic {
    width: 300px;
@@ -154,7 +154,8 @@ a {
 .bodySubTitle {
   color: gray;
   font-size: 16px;
-  margin: 10px;
+  margin: 0 10px;
+  width: 460px;
 }
 
 .tagTitle {
@@ -204,17 +205,20 @@ a {
 }
 .fabLnk{
     cursor: pointer;
-    width: 60px;
-    height: 60px;
-    background-color: red;
-    border-radius: 30px;
-    padding-left: 15px;
+    width: 45px;
+    height: 45px;
+    background-color: #3d315b;
+    border-radius: 35px;
+    padding-left: 20px;
     padding-top: 20px;
-    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.58);
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.72);
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
 }
 
 .fabLnk:hover{
-    background-color: orange;
+    background-color: #db5850;
 }
 .tagHeader{
   margin-top: 4px;
@@ -223,4 +227,19 @@ a {
     color: #db5850;
     font-size: 14px;
     margin: 0 5px;
+}
+.searchRow{
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.likeCount{
+  justify-content: flex-end;
+    height: 13px;
+    margin-top: -22px;
+    margin-right: 10px;
+}
+.likeCount label{
+    font-size: 10px;
+    color: rgb(112, 139, 117);
+    margin-left: 5px;
 }

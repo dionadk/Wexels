@@ -1,8 +1,8 @@
 
 <h1 class="headerLbl">Get inspired</h1>
-<div class="flexRow">
+<div class="flexRow searchRow">
 
-<!-- <%= form_tag(pics_path,method: :get) do %>
+<%= form_tag(pics_path,method: :get) do %>
   <%= text_field_tag :name,params[:name]%>
   <%= submit_tag 'Search',name: nil %>
 <% end %>
@@ -11,35 +11,37 @@
 
 
 <div class="flexcollection">
-  <% @tags.each do |tag| %>
-    <% @pics.where(:id => tag.pic_id).each do |pic| %>
+
+  <% if(params[:name] == nil || params[:name] == '') %>
+    <% @pics.each do |pic| %>
         <div class="flexImg">
           <img class="pic" src="<%= pic.img_url %>"/>
           <%= link_to pic.title, pic_path(pic) %>
+          <div class="flexRow likeCount">
+            <img src="https://i.imgur.com/mq1NtLZ.png"/>
+            <label><%= @likes.where(:pic_id => pic.id).size %> </label>
+          </div>
+
         </div>
     <%end%>
-  <%end%>
-</div> -->
 
-
-<div class="flexcollection">
-  <% @pics.each do |pic|%>
-      <div class="flexImg">
-        <img class="pic" src="<%= pic.img_url %>"/>
-        <%= link_to pic.title,pic_path(pic)%>
-      </div>
+    <%else%>
+      <% @tags.each do |tag| %>
+        <% @pics.where(:id => tag.pic_id).each do |pic| %>
+            <div class="flexImg">
+              <img class="pic" src="<%= pic.img_url %>"/>
+              <%= link_to pic.title, pic_path(pic) %>
+            </div>
+        <%end%>
+      <%end%>
+      <%end%>
 </div>
-<% end %>
 
-<% @pic.likes.each do |pic| %>
-<% if current_user %>
-        <% if pic.likes.include? current_user %>
-          <%= link_to "&hearts;".html_safe, remove_like_pic_path(pic), method: :delete, class: "fav" %>
-        <% else %>
-          <%= link_to "&hearts;".html_safe, add_like_pic_path(pic), method: :post, class: "no-fav" %>
-        <% end %>
-      <% end %>
-      <% end %>
+
+
+
+
+
 
 
 <!-- <% if @pics.blank? %>

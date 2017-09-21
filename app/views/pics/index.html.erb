@@ -28,7 +28,7 @@
         </div>
     <%end%>
 
-    <%else ("params[:name] LIKE ?"  "%#{params[:name]}%") %>
+    <%else%>
 
       <% @tags.each do |tag| %>
         <% @pics.where(:id => tag.pic_id).each do |pic| %>

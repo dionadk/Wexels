@@ -5,8 +5,14 @@ class CommentsController < ApplicationController
   end
 
   def new
+    if current_user == nil
+    redirect_to pics_path
+
+      flash[:alert] = "Sign In to comment"
+    else
     @pic = Pic.find(params[:pic_id])
     @comment = @pic.comments.new
+  end
   end
 
   def create

@@ -1,17 +1,22 @@
-<h2>New Upload</h2>
 
-<%= form_for @pic do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <h2>New Upload</h2>
+  <div class="flexContainer">
+  <div class="flexColumn formColumn">
 
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+    <%= form_for @pic do |f| %>
+      <%= f.label :title, class:"formLbl" %>
+      <%= f.text_field :title %>
 
-  <%= f.label :img_url %>
-  <%= f.text_field :img_url %>
+      <%= f.label :body, class:"formLbl" %>
+      <%= f.text_field :body %>
 
-  <%= f.label :uploaded_by %>
-  <%= f.text_field :uploaded_by %>
+      <%= f.label :img_url, class:"formLbl" %>
+      <%= f.text_field :img_url %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.label :uploaded_by, class:"formLbl" %>
+      <%= f.text_field :uploaded_by %>
+
+      <%= f.submit :upload%>
+    <% end %>
+    </div>
+</div>

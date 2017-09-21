@@ -1,15 +1,18 @@
 
 <h1 class="headerLbl">Get inspired</h1>
+
+<!-- search tag -->
 <div class="flexRow searchRow">
 
 <%= form_tag(pics_path,method: :get) do %>
   <%= text_field_tag :name,params[:name]%>
   <%= submit_tag 'Search',name: nil %>
 <% end %>
+
 </div>
 
 
-
+<!-- display searched tag images -->
 <div class="flexcollection">
 
   <% if(params[:name] == nil || params[:name] == '') %>
@@ -31,6 +34,10 @@
             <div class="flexImg">
               <img class="pic" src="<%= pic.img_url %>"/>
               <%= link_to pic.title, pic_path(pic) %>
+              <div class="flexRow likeCount">
+                <img src="https://i.imgur.com/mq1NtLZ.png"/>
+                <label><%= @likes.where(:pic_id => pic.id).size %> </label>
+              </div>
             </div>
         <%end%>
       <%end%>

@@ -9,22 +9,22 @@
   </head>
 
   <body>
-    <div>
 
+  <div>
     <nav>
       <a class="logoLnk" href="/pics">Wexel</a>
       <div class="uploadlnk" title="Upload my idea">
       <a href="/pics/new"><img src='https://imgur.com/cHcTXyL.png'/></a>
       </div>
       <div class="signUser">
-     <% unless current_user %>
-       <%= link_to "Sign Up" , new_user_registration_path %>
-       <%= link_to "Sign in", new_user_session_path %>
-       <%else%>
-       <%= current_user.email %>
-       <%= link_to image_tag("logout.png"), destroy_user_session_path, :method => :delete %>
-     <%end%>
-   </div>
+       <% unless current_user %>
+         <%= link_to "Sign Up" , new_user_registration_path %>
+         <%= link_to "Sign in", new_user_session_path %>
+       <% else %>
+         <%= current_user.email %>
+         <%= link_to image_tag("logout.png"), destroy_user_session_path, :method => :delete %>
+       <%end%>
+     </div>
      </nav>
    </div>
 
@@ -34,17 +34,19 @@
 
  <div class="footerContainer">
    <div class="footerColumn">
-     About Me
-   </div>
-   <div class="footerColumn">
-     <p>Show and tell for designers
+   <label class="logoLnk primaryColor">Wexel</label>
+     <p class="lblDescription">Show and tell for designers
+       <br/>
 
 What are you working on? Wexel is a community of designers sharing screenshots of their work, process, and projects.</p>
    </div>
-   <div class="footerRow">
-     © 2017 Wexel by dk designs. All rights reserved
-     <a class="footerLink" href="#!">More Links</a>
-   </div>
+
+
  </div>
+ <div class="footerRow">
+   © 2017 Wexel by dk designs. All rights reserved
+   <!-- <img class="logoImg" src="https://i.imgur.com/8zq2dJm.png"/> -->
+ </div>
+
   </body>
 </html>

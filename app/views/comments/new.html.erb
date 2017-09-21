@@ -1,11 +1,15 @@
 <h2>Add Comment</h2>
 
-<%= form_for [@pic,@comment] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="flexContainer">
+  <div class="flexColumn formColumn">
+    <%= form_for [@pic,@comment] do |f| %>
+      <%= f.label :name, class:"formLbl" %>
+      <%= f.text_field :name %>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+      <%= f.label :content, class:"formLbl" %>
+      <%= f.text_field :content %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

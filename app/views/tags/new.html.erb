@@ -1,7 +1,11 @@
 <h2>Create a Tag name</h2>
 
-<%= form_for [@pic,@tag] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="flexContainer">
+  <div class="flexColumn formColumn">
+    <%= form_for [@pic,@tag] do |f| %>
+      <%= f.label :name, class:"formLbl" %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

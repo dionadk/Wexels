@@ -19,27 +19,24 @@ class PicsController < ApplicationController
 #     @pics = Pic.all.order("created_at DESC")
 #   end
 # end
-def add_like
-  @users = User.all
-  @pic = Pic.find(params[:id])
-  @like = Like.create(user: current_user,pic: @pic)
-  redirect_to pic_path(@pic)
-end
 
-def remove_like
-  @pic = Pic.find(params[:id])
-  Like.find_by(user: current_user,pic: @pic).destroy
-  redirect_to pic_path(@pic)
-end
 
   def new
-    @pic = Pic.new
+    if current_user == nil
+    redirect_to pics_path
+
+      flash[:alert] = "Sign In to upload"
+    else
+      @pic = Pic.new
+  end
+
 
   end
 
 
   def create
-    @pic = current_user.pics.create!(pic_params.merge(user:current_user))
+
+    @pic = Pic.create!(pic_params.merge(user:current_user))
 
     redirect_to pic_path(@pic)
 
@@ -48,7 +45,7 @@ end
   def edit
     @pic = Pic.find(params[:id])
     if @pic.user != current_user
-    flash[:alert] = "Only signed in users can edit"
+    flash[:alert] = "Only  '#{@pic.user.email}' can edit"
     redirect_to pic_path(@pic)
   end
   end
@@ -58,7 +55,7 @@ end
     if @pic.user === current_user
     @pic.update(pic_params)
     else
-      flash[:alert] = "Only signed in users can edit"
+      flash[:alert] = "Only '#{@pic.user.email}' can edit"
     end
       redirect_to pic_path(@pic)
 
@@ -79,6 +76,19 @@ end
     @comment = @pic.comments
     @tag =  @pic.tags
     @like = Like.find_by(user: current_user,pic: @pic)
+  end
+
+  def add_like
+    @users = User.all
+    @pic = Pic.find(params[:id])
+    @like = Like.create(user: current_user,pic: @pic)
+    redirect_to pic_path(@pic)
+  end
+
+  def remove_like
+    @pic = Pic.find(params[:id])
+    Like.find_by(user: current_user,pic: @pic).destroy
+    redirect_to pic_path(@pic)
   end
 
   private

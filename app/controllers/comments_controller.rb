@@ -19,12 +19,15 @@ class CommentsController < ApplicationController
   def edit
     @pic = Pic.find(params[:pic_id])
     @comment = @pic.comments.find(params[:id])
+
   end
 
   def update
     @pic = Pic.find(params[:pic_id])
     @comment = Comment.find(params[:id])
+
     @comment.update(comment_params)
+
     redirect_to pic_path(@pic)
 
   end
@@ -32,7 +35,11 @@ class CommentsController < ApplicationController
     def destroy
       @pic = Pic.find(params[:pic_id])
       @comment = Comment.find(params[:id])
+      if @pic.user == current_user
       @comment.destroy
+    else
+      flash[:alert] = "Denied!!!"
+    end
       redirect_to pic_path(@pic)
     end
 

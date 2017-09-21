@@ -37,6 +37,9 @@ class PicsController < ApplicationController
   def create
 
     @pic = Pic.create!(pic_params.merge(user:current_user))
+    if @pic.save
+      flash[:notice] = "Successfully uploaded"
+    end
 
     redirect_to pic_path(@pic)
 
@@ -54,6 +57,7 @@ class PicsController < ApplicationController
     @pic = Pic.find(params[:id])
     if @pic.user === current_user
     @pic.update(pic_params)
+    flash[:notice] = "Updated!!!"
     else
       flash[:alert] = "Only '#{@pic.user.email}' can edit"
     end
@@ -65,6 +69,7 @@ class PicsController < ApplicationController
     @pic = Pic.find(params[:id])
     if @pic.user == current_user
       @pic.destroy
+      flash[:notice] = "Successfully deleted"
     else
       flash[:alert] = "Denied!!!"
     end

@@ -7,6 +7,7 @@ class Pic < ApplicationRecord
   belongs_to :user
   has_many :tags,dependent: :destroy
   has_many :likes,dependent: :destroy
+  validates :img_url, :title, presence: true
 
 
 end

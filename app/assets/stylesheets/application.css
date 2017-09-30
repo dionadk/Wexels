@@ -13,110 +13,119 @@
  *= require_tree .
  *= require_self
  */
- @import url(https://fonts.googleapis.com/css?family=Black+Ops+One|Meddon);
- @import url(https://fonts.googleapis.com/css?family=Fira+Sans);
-nav{
-  height:60px;
+
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One|Meddon);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+nav {
+  height: 60px;
   background-color: #3D315B;
   margin: 0;
   box-shadow: 2px 2px 5px gray;
 }
-.imgPreview{
+
+.imgPreview {
   width: 500px;
   height: 450px;
 }
-.logoLnk{
+
+.logoLnk {
   font-family: 'Meddon', cursive;
   text-decoration: none;
   color: #fff;
   font-size: 28px;
   margin: 0 10px;
 }
-.uploadlnk{
+
+.uploadlnk {
   text-align: right;
   margin: -40px 10px;
 }
+
 .signUser {
   text-align: right;
   color: white;
-
   text-decoration: none;
   padding: 10px 70px;
+}
 
+.flexImg {
+  display: inline-grid;
+  text-align: center;
+  margin: 10px;
 }
- .flexImg{
-    display: inline-grid;
-    text-align: center;
-    margin: 10px;
- }
- .flexImg a{
-    padding-top: 15px;
-    color: #708B75;
-    text-decoration: none;
-    background-color: #fff;
-    margin: -40px 0 0;
-    height: 25px;
- }
-.flexcollection{
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+.flexImg a {
+  padding-top: 15px;
+  color: #708B75;
+  text-decoration: none;
+  background-color: #fff;
+  margin: -40px 0 0;
+  height: 25px;
 }
- .pic {
-   width: 300px;
-   height: 250px;
-   box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.2);
- }
- .imgBox{
-   width: 500px;
-   height: 450px;
-   box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.2);
-   margin: 10px;
- }
- .headerLbl{
-   color:#3D315B;
-   text-align: center;
+
+.flexcollection {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pic {
+  width: 300px;
+  height: 250px;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.2);
+}
+
+.imgBox {
+  width: 500px;
+  height: 450px;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.2);
+  margin: 10px;
+}
+
+.headerLbl {
+  color: #3D315B;
+  text-align: center;
   font-family: 'Meddon', cursive;
- }
+}
 
- .title {
-   display: inline-flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   color: #708B75;
- }
+.title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #708B75;
+}
 
- span.headerTitle {
-   text-align: left;
-   padding-left: 350px;
-   color: #708B75;
- }
+span.headerTitle {
+  text-align: left;
+  padding-left: 350px;
+  color: #708B75;
+}
 
- .comment {
-   display: inline-flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
- }
+.comment {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
- span.commentSpan {
-   text-align: right;
-   padding-left: 250px;
- }
+span.commentSpan {
+  text-align: right;
+  padding-left: 250px;
+}
 
- .tagDisplay {
-
-   display: flex;
-    margin-top: 200px;
-    padding: 10px 20px;
- }
+.tagDisplay {
+  display: flex;
+  margin-top: 200px;
+  padding: 10px 20px;
+}
 
 a {
   text-decoration: none;
 }
- body {
-   margin:0;
-   font-family: sans-serif;
- }
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
 
 .flexContainer {
   display: flex;
@@ -125,22 +134,23 @@ a {
 .flexSubContainer {
   flex-grow: 2;
   margin: 30px 0;
-
 }
 
-.flexRow{
+.flexRow {
   display: flex;
 }
-.flexColumn{
+
+.flexColumn {
   display: grid;
 }
-.designerProfile{
+
+.designerProfile {
   width: 40px;
   height: 40px;
 }
 
 .headerTitle {
-  color:#3D315B;
+  color: #3D315B;
   font-size: 22px;
   margin: 0 10px;
 }
@@ -162,94 +172,107 @@ a {
   color: orange;
   font-size: 14px;
   margin: 0 10px;
-
 }
 
 .icon {
   width: 30px;
   height: 30px;
+}
 
+.commentBlock {
+  background-color: rgba(211, 211, 211, 0.12);
+  border-bottom: 1px solid rgba(61, 49, 91, 0.42);
+  min-height: 60px;
+  padding: 5px;
 }
-.commentBlock{
-    background-color: rgba(211, 211, 211, 0.12);
-    border-bottom: 1px solid rgba(61, 49, 91, 0.42);
-    min-height: 60px;
-    padding: 5px;
+
+.commentColumn {
+  margin-top: 50px;
+  min-height: 450px;
+  background-color: #f6f7f9;
 }
-.commentColumn{
-    margin-top: 50px;
-    min-height: 450px;
-    background-color: #f6f7f9;
-}
-.homeBtn{
+
+.homeBtn {
   margin-top: 30px;
   font-size: 13px;
   color: #db5850;
 }
-.homeBtn span{
-  color:#3D315B;
+
+.homeBtn span {
+  color: #3D315B;
 }
-.backButton{
+
+.backButton {
   margin-top: 25px;
 }
-.signUser a{
+
+.signUser a {
   font-family: sans-serif;
   color: #fff;
   margin-left: 20px;
 }
-.tagLbl{
+
+.tagLbl {
   margin-left: 10px;
 }
-.defaultView{
+
+.defaultView {
   margin: 0 10px;
 }
-.fabLnk{
-    cursor: pointer;
-    width: 45px;
-    height: 45px;
-    background-color: #3d315b;
-    border-radius: 35px;
-    padding-left: 20px;
-    padding-top: 20px;
-    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.72);
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
+
+.fabLnk {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  background-color: #3d315b;
+  border-radius: 35px;
+  padding-left: 20px;
+  padding-top: 20px;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.72);
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
 }
 
-.fabLnk:hover{
-    background-color: #db5850;
+.fabLnk:hover {
+  background-color: #db5850;
 }
-.tagHeader{
+
+.tagHeader {
   margin-top: 4px;
 }
-.tagTitle{
-    color: #db5850;
-    font-size: 14px;
-    margin: 0 5px;
+
+.tagTitle {
+  color: #db5850;
+  font-size: 14px;
+  margin: 0 5px;
 }
-.searchRow{
+
+.searchRow {
   justify-content: flex-end;
   margin-right: 20px;
 }
-.likeCount{
+
+.likeCount {
   justify-content: flex-end;
-    height: 13px;
-    margin-top: -22px;
-    margin-right: 10px;
+  height: 13px;
+  margin-top: -22px;
+  margin-right: 10px;
 }
-.likeCount label{
-    font-size: 10px;
-    color: rgb(112, 139, 117);
-    margin-left: 5px;
+
+.likeCount label {
+  font-size: 10px;
+  color: rgb(112, 139, 117);
+  margin-left: 5px;
 }
 
 .footerContainer {
-    display: flex;
-    height: 120px;
-    background-color: rgba(61, 49, 91, 0.08);
-    margin-top: 30px;
+  display: flex;
+  height: 120px;
+  background-color: rgba(61, 49, 91, 0.08);
+  margin-top: 30px;
 }
+
 .footerRow {
   display: flex;
   color: #db5850;
@@ -258,78 +281,88 @@ a {
   background-color: rgba(61, 49, 91, 0.08);
   justify-content: center;
 }
-a.footerLink{
+
+a.footerLink {
   display: flex;
   padding: 0px 10px;
 }
-.footerColumn{
+
+.footerColumn {
   display: grid;
 }
 
-
 input[type="email"],
 input[type="text"],
-input[type="password"]{
-    font-size: 20px;
-    border: 0;
-    border-bottom: 1px solid #3d315b;
-    outline:none;
+input[type="password"] {
+  font-size: 20px;
+  border: 0;
+  border-bottom: 1px solid #3d315b;
+  outline: none;
 }
+
 input[type="email"]:focus,
 input[type="text"]:focus,
-input[type="password"]:focus{
-border:0;
-    border-bottom: 1px solid #db5850;
+input[type="password"]:focus {
+  border: 0;
+  border-bottom: 1px solid #db5850;
 }
+
 input[type="submit"],
-input[type="button"]{
-
-    height: 30px;
-    border: 0;
-    background-color: #3d315b;
-    color: #fff;
-    padding: 0 15px;
-    margin-top: 10px;
+input[type="button"] {
+  height: 30px;
+  border: 0;
+  background-color: #3d315b;
+  color: #fff;
+  padding: 0 15px;
+  margin-top: 10px;
 }
+
 input[type="submit"]:hover,
-input[type="button"]:hover{
-    background-color: #db5850;
-}
-.new_user{
-    margin-left:43%;
+input[type="button"]:hover {
+  background-color: #db5850;
 }
 
-body h2{
-    color:#3d315b;
-    margin-left:43%;
+.new_user {
+  margin-left: 43%;
 }
+
+body h2 {
+  color: #3d315b;
+  margin-left: 43%;
+}
+
 .formLbl,
-.new_user label{
-    color: #db5850;
-    text-transform: lowercase;
-    font-size: 12px;
+.new_user label {
+  color: #db5850;
+  text-transform: lowercase;
+  font-size: 12px;
 }
 
-.new_user .field{
-    height: 55px;
+.new_user .field {
+  height: 55px;
 }
-.primaryColor{
-    color:#3d315b;
+
+.primaryColor {
+  color: #3d315b;
 }
-.secondaryColor{
-    color:#db5850;
+
+.secondaryColor {
+  color: #db5850;
 }
-.lblDescription{
+
+.lblDescription {
   width: 250px;
   font-size: 12px;
   margin: -10px 10px;
   color: rgba(128, 128, 128, 0.72);
 }
-.logoImg{
+
+.logoImg {
   width: 60px;
   height: 60px;
 }
-.formColumn{
-  width:230px;
+
+.formColumn {
+  width: 230px;
   margin-left: 43%;
 }

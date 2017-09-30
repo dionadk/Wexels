@@ -28,29 +28,27 @@
      </nav>
    </div>
 
-    <% flash.each do |type,message| %>
+  <% flash.each do |type,message| %>
     <p class="flash <%= type %>"><%= message %> </p>
-    <%end%>
+  <%end%>
 
 
-    <%= yield %>
+  <%= yield %>
 
- <div class="footerContainer">
-   <div class="footerColumn">
-   <label class="logoLnk primaryColor">Wexel</label>
-     <p class="lblDescription">Show and tell for designers
-       <br/>
-
-What are you working on? Wexel is a community of designers sharing screenshots of their work, process, and projects.</p>
-
-   </div>
-
-
- </div>
- <div class="footerRow">
-   © 2017 Wexel by dk designs. All rights reserved
-   <!-- <img class="logoImg" src="https://i.imgur.com/8zq2dJm.png"/> -->
- </div>
+  <div class="footerContainer">
+    <div class="footerColumn">
+    <label class="logoLnk primaryColor">Wexel</label>
+      <p class="lblDescription">Show and tell for designers
+        <br/>
+          What are you working on? Wexel is a community of designers sharing screenshots of their work, process, and projects.
+        </p>
+    </div>
+    </div>
+    
+  <div class="footerRow">
+    © 2017 Wexel by dk designs. All rights reserved
+    <!-- <img class="logoImg" src="https://i.imgur.com/8zq2dJm.png"/> -->
+  </div>
 
   </body>
 </html>

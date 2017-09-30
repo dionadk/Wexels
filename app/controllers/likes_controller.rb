@@ -1,6 +1,4 @@
 class LikesController < ApplicationController
-
-
   def add_like
     @users = User.all
     @pic = Pic.find(params[:id])
@@ -12,5 +10,4 @@ class LikesController < ApplicationController
     Like.find_by(user: current_user,pic: params[:id]).destroy
     redirect_to :back
   end
-
 end

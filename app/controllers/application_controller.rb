@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :couldnt_find_record
   rescue_from NoMethodError, with: :no_method_error
 
+  # Great job adding this!!!
   private
   def couldnt_find_record
     redirect_to root_url, notice: "That record doesn't exist!"
